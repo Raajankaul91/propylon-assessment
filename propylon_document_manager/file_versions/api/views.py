@@ -10,6 +10,7 @@ from rest_framework import status
 class FileVersionList(APIView):
     permission_classes = (IsAuthenticated,)
 
+    '''Gets all the files owned by the user'''
     def get(self, request):
 
         user_id = request.user.id
@@ -19,6 +20,8 @@ class FileVersionList(APIView):
         serialized_files = FileVersionSerializer(files, many=True).data
         return Response({"files": serialized_files}, status=200)
 
+    '''Adds file details to the database and the file content in base64 format and 
+    stores a physical copy on CAS based location'''
     def post(self, request):
 
         user_id = request.user.id
@@ -36,6 +39,7 @@ class FileVersionList(APIView):
 class FileVersionSearch(APIView):
     permission_classes = (IsAuthenticated,)
 
+    '''Provides content based search for valid file types'''
     def get(self, request):
 
         user_id = request.user.id
@@ -52,6 +56,8 @@ class FileVersionSearch(APIView):
 class FileVersion(APIView):
     permission_classes = (IsAuthenticated,)
 
+    '''Gets one file at a time based on the parameters set by the user 
+    like - location, file version and file name.'''
     def get(self, request, file_version):
 
         user_id = request.user.id

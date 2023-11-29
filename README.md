@@ -10,11 +10,8 @@ The Propylon Document Management Technical Assessment is a simple (and incomplet
 5. `$ direnv allow .`
 6. `$ pipenv install -r requirements/local.txt`.  If Python 3.11 is not the default Python version on your system you may need to explicitly create the virtual environment (`$ python3.11 -m venv .venv`) prior to running the install command. 
 7. `$ pipenv run python manage.py migrate` to create the database.
-8. `$ pipenv run python manage.py load_file_fixtures` to create the fixture file versions.
 9. `$ pipenv run python manage.py runserver 0.0.0.0:8001` to start the development server on port 8001.
-10. Navigate to the client/doc-manager directory.
-11. `$ npm install` to install the dependencies.
-12. `$ npm start` to start the React development server.
+10. Create superuser with the below mentioned command for login and authentication.
 
 [![Built with Cookiecutter Django](https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg?logo=cookiecutter)](https://github.com/cookiecutter/cookiecutter-django/)
 [![Black code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)

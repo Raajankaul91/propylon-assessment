@@ -4,7 +4,7 @@ class ScopeException(Exception):
 class Scopes():
 
     """
-        Checks the scope of a user for a file
+        Checks the scope of a user against a file
     """
     @staticmethod
     def in_user_scope(user_id, *, file_user_id=None):

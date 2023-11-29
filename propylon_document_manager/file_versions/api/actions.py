@@ -51,6 +51,7 @@ def add_file(user_id, file):
     with open(os.path.join(path, file_name), file_open_mode) as f:
         f.write(readable_data)
 
+    # Enforcing read/write permission on the file
     os.chmod(os.path.join(path, file_name), permissions)
 
     return file

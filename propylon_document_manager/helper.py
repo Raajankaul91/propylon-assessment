@@ -2,6 +2,8 @@ import base64
 from base64 import b64decode
 
 
+# converts base64 format into human readable data and also provies the mode
+# in which the file needs to be opened in to store that data
 def get_readable_data(base64_encoded_data, file_type):
 
     base64_text = base64_encoded_data.split("base64,", 1)[1]
@@ -19,6 +21,7 @@ def get_readable_data(base64_encoded_data, file_type):
     return readable_data, "w"
 
 
+# Provides octal permission values for read/write permission enforcement on files
 def get_permission_octal_value(is_readable, is_writable):
 
     if is_readable and not is_writable:
