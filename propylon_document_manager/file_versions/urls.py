@@ -3,7 +3,7 @@ from propylon_document_manager.file_versions.api.views import FileVersionList, F
 
 
 urlpatterns = [
-    path('', FileVersionList.as_view()),
-    path('search/', FileVersionSearch.as_view()),
-    path('<int:file_version>/', FileVersion.as_view())
+    path('', FileVersionList.as_view(), name="file_version_files"),
+    path('search/', FileVersionSearch.as_view(), name="file_search"),
+    path('<int:file_version>/', FileVersion.as_view(), name="file_version_file")
 ]
