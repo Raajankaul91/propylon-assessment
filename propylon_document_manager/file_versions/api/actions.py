@@ -86,9 +86,9 @@ def search_files(user_id, search_value):
     files = FileVersion.objects.filter(user_id=user_id, file_type__in=valid_file_type)
 
     for file in files:
-        text = get_readable_data(file.file_data.file_data, file.file_type)
+        text, file_open_mode = get_readable_data(file.file_data.file_data, file.file_type)
 
-        if search_value in text:
+        if search_value.lower() in text.lower():
             filtered_files.append(file)
         else:
             continue

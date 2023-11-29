@@ -4,8 +4,6 @@ from base64 import b64decode
 
 def get_readable_data(base64_encoded_data, file_type):
 
-    print(file_type)
-
     base64_text = base64_encoded_data.split("base64,", 1)[1]
     _bytes = b64decode(base64_text, validate=True)
     if _bytes[0:4] != b'%PDF' and file_type=="application/pdf":
