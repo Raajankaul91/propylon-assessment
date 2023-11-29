@@ -15,7 +15,7 @@ class FileData(models.Model):
         super(FileData, self).save(*args, **kwargs)
 
     class Meta:
-        app_label = "propylon-assessment-backend"
+        app_label = "file_versions"
         ordering = ('created_at',)
 
 
@@ -39,5 +39,5 @@ class FileVersion(models.Model):
         return self.file_name
 
     class Meta:
-        app_label = "propylon-assessment-backend"
+        app_label = "file_versions"
         ordering = ('created_at',)
